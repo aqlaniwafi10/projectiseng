@@ -101,6 +101,9 @@ async def subscribe_to_new_tokens(websocket):
                 # Print the token information
                 database = message
                 database = database.replace("'", '"')
+                database["Telegram"] = telegram
+                database["Twitter"] = twitter
+                database["Website"] = website
                 # Menggunakan json.loads untuk parsing string JSON
                 try:
                     database = json.loads(database)
